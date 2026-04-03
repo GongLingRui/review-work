@@ -1,0 +1,215 @@
+.SideTable_box {
+  height: 100%;
+  overflow: auto;
+  // padding-right: 5px;
+
+  &::-webkit-scrollbar {
+    display: none;
+  }
+
+  scrollbar-width: none;
+  /* 针对 Firefox */
+  -ms-overflow-style: none;
+  /* 针对 IE 10+ */
+
+  .SideTable_item {
+    margin-bottom: 16px;
+
+    .item_top {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 8px;
+
+      .item_title {
+        color: #000000;
+        font-size: 14px;
+        font-weight: 500;
+      }
+
+      .item_SeeAll {
+        color: #939393;
+        font-size: 14px;
+        font-weight: 400;
+        cursor: pointer;
+
+        &:hover {
+          color: black;
+        }
+      }
+    }
+
+    .item_down_fullScreen {
+      display: grid;
+      grid-gap: 15px;
+      grid-template-columns: repeat(auto-fill, minmax(100px, 1fr)) !important;
+      // grid-template-rows: repeat(2, 100px);
+
+
+      .SideCard_box_fullScreen {
+        // border: 1px solid black;
+        aspect-ratio: 1 / 1; // 使得宽度等比例缩放
+        max-height: 130px;
+        max-width: 130px;
+        min-width: 100px;
+        min-height: 100px;
+      }
+    }
+
+    .item_fixed {
+      position: relative;
+      height: 110px;
+
+      .item_refresh_box {
+        height: 100%;
+        position: relative;
+
+        .loading {
+          height: 100%;
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+          justify-content: center;
+
+          .loadingBox {
+            width: 40px;
+            height: 40px;
+          }
+        }
+
+        .no_data_refresh {
+          height: 100%;
+          position: relative;
+
+          .no_data_box {
+            position: absolute;
+            top: 0;
+            left: 50%;
+            margin-left: -91px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+
+            .no_data_icon {
+              width: 70px;
+              height: auto;
+            }
+
+            >div {
+              color: #939393;
+              font-size: 12px;
+              font-weight: 400;
+              text-align: center;
+            }
+          }
+
+          .item_refresh {
+            position: absolute;
+            top: 80%;
+            left: 50%;
+            margin-left: -60px;
+            border: 1px solid rgba(0, 0, 0, 0.30);
+            color: black;
+            cursor: pointer;
+            height: 32px;
+            width: 110px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            border-radius: 4px;
+          }
+        }
+      }
+
+      .item_down_left {
+        position: absolute;
+        left: 0px;
+        top: 43px;
+        width: 16px;
+        height: 16px;
+        cursor: pointer;
+        z-index: 100;
+        border-radius: 50%;
+        -webkit-filter: drop-shadow(0px 0px 20px #0003);
+        /*考虑浏览器兼容性：兼容 Chrome, Safari, Opera */
+        filter: drop-shadow(0px 0px 20px #0003);
+      }
+
+      .item_down_right {
+        position: absolute;
+        right: 0px;
+        top: 43px;
+        width: 16px;
+        height: 16px;
+        cursor: pointer;
+        z-index: 100;
+        border-radius: 50%;
+        -webkit-filter: drop-shadow(0px 0px 20px #0003);
+        /*考虑浏览器兼容性：兼容 Chrome, Safari, Opera */
+        filter: drop-shadow(0px 0px 20px #0003);
+      }
+
+      .item_down {
+        display: flex;
+        // justify-content: space-between;
+        align-items: center;
+        overflow-x: auto;
+        overflow-y: hidden;
+        scroll-behavior: smooth;
+        // width: 16px;
+        // height: 16px;
+
+        ::-webkit-scrollbar {
+          display: none;
+        }
+
+        // 针对 IE 和 Edge
+        -ms-overflow-style: none;
+
+        // 针对 Firefox
+        scrollbar-width: none;
+
+        .SideCard_box {
+          user-drag: element !important;
+          -webkit-user-drag: element !important;
+          // border: 1px solid black;
+        }
+
+        .SideCard_box_few {}
+
+        .SideCard_box_many {
+          margin-right: 0px !important;
+          // margin-bottom: 10px;
+
+        }
+      }
+    }
+
+    .item_down_many {
+      // overflow: none;
+      // flex-wrap: wrap;
+      // margin-right: 0px;
+      // margin-bottom: 10px;
+      // justify-content: space-between;
+      display: grid !important;
+      grid-template-columns: repeat(3, 1fr) !important;
+      gap: 10px !important;
+    }
+  }
+
+
+  .load {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin: 30px auto;
+
+    .loadingBox {
+      width: 40px;
+      height: 40px;
+    }
+  }
+
+}
